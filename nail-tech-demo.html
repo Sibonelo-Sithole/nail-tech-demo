@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wang Nails | Premium Nail Salon & Spa in Johannesburg</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #f8e5e5 0%, #ffffff 100%);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #d4a574;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #666;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #d4a574;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fdf4f4 0%, #ffe8e8 100%);
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: #333;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero .tagline {
+            font-size: 1.5rem;
+            color: #d4a574;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #d4a574;
+            color: white;
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #c19463;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 165, 116, 0.4);
+        }
+
+        /* Trust Badge */
+        .trust-badge {
+            background: white;
+            padding: 2rem;
+            margin: 3rem auto 0;
+            max-width: 600px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .badge-item {
+            text-align: center;
+        }
+
+        .badge-item .number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #d4a574;
+        }
+
+        .badge-item .label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #999;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: #fafafa;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: #d4a574;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .team-member {
+            text-align: center;
+            padding: 1.5rem;
+            background: #fafafa;
+            border-radius: 15px;
+            transition: all 0.3s;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .team-member-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #d4a574 0%, #c19463 100%);
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .team-member h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .team-member p {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-left: 4px solid #d4a574;
+        }
+
+        .stars {
+            color: #d4a574;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            color: #333;
+            font-weight: 600;
+        }
+
+        /* Special Occasions */
+        .occasions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .occasion-card {
+            background: linear-gradient(135deg, #fdf4f4 0%, #ffe8e8 100%);
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .occasion-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .occasion-card h3 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .occasion-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, #fdf4f4 0%, #ffe8e8 100%);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .contact-info h3 {
+            color: #333;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: #d4a574;
+            min-width: 30px;
+        }
+
+        .contact-details {
+            color: #666;
+        }
+
+        .contact-details strong {
+            color: #333;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #d4a574;
+            text-decoration: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.2rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Highlight Box */
+        .highlight-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin: 3rem auto;
+            max-width: 800px;
+            text-align: center;
+            border-top: 4px solid #d4a574;
+        }
+
+        .highlight-box h3 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .highlight-box p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Wang Nails</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#team">Our Team</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Experience Luxury That Feels Like Home</h1>
+            <p class="tagline">Premium Nail Care at Prices That Make Sense</p>
+            <p>Where professional excellence meets genuine warmth. Your journey to beautiful nails and complete relaxation starts here.</p>
+            <a href="#contact" class="cta-button">Book Your Appointment</a>
+            
+            <div class="trust-badge">
+                <div class="badge-item">
+                    <div class="number">⭐ 5.0</div>
+                    <div class="label">Client Rating</div>
+                </div>
+                <div class="badge-item">
+                    <div class="number">3+</div>
+                    <div class="label">Years Excellence</div>
+                </div>
+                <div class="badge-item">
+                    <div class="number">100%</div>
+                    <div class="label">Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section>
+        <div class="highlight-box">
+            <h3>The "Rolls Royce" Treatment You Deserve</h3>
+            <p>At Wang Nails, we believe luxury shouldn't be out of reach. Our clients describe their experience as "beyond expectations" – from the moment you walk in, you're family. Whether it's your first visit or you've been with us for years, expect exceptional care, skilled artistry, and that rare feeling of being truly at home.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2 class="section-title">Our Signature Services</h2>
+        <p class="section-subtitle">Professional treatments crafted with care and precision</p>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">💅</div>
+                <h3>Manicures</h3>
+                <p>From classic to gel, our expert technicians create flawless, long-lasting manicures with personalized color consultation.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🦶</div>
+                <h3>Pedicures</h3>
+                <p>Relax and rejuvenate with our luxurious pedicure treatments. Your feet deserve royal treatment.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">✨</div>
+                <h3>Gel & Nail Art</h3>
+                <p>Beautiful, durable gel nails and custom nail art designs that express your unique style.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">💆</div>
+                <h3>Massage Treatments</h3>
+                <p>Amazing massage treatments that melt away stress. Our clients call them "out of this world."</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🌸</div>
+                <h3>Spa Treatments</h3>
+                <p>Complete relaxation with our range of spa treatments designed to refresh and renew.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">👥</div>
+                <h3>Group Packages</h3>
+                <p>Perfect for couples, bridal parties, and celebrations. Create memories together in comfort.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Occasions -->
+    <section>
+        <h2 class="section-title">Special Occasions</h2>
+        <p class="section-subtitle">Making your important moments even more memorable</p>
+        
+        <div class="occasions-grid">
+            <div class="occasion-card">
+                <div class="occasion-icon">👰</div>
+                <h3>Bridal Packages</h3>
+                <p>Your wedding day deserves perfection. Let us pamper you and your bridal party with our exclusive packages.</p>
+                <a href="#contact" class="cta-button">Ask About Packages</a>
+            </div>
+            
+            <div class="occasion-card">
+                <div class="occasion-icon">🎂</div>
+                <h3>Birthday Celebrations</h3>
+                <p>Treat yourself or someone special to a day of luxury and relaxation for their birthday.</p>
+                <a href="#contact" class="cta-button">Book a Celebration</a>
+            </div>
+            
+            <div class="occasion-card">
+                <div class="occasion-icon">💝</div>
+                <h3>Gift Experience</h3>
+                <p>Give the gift of relaxation and beauty. Perfect for any special occasion.</p>
+                <a href="#contact" class="cta-button">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team">
+        <h2 class="section-title">Meet Our Award-Winning Team</h2>
+        <p class="section-subtitle">Skilled professionals who treat you like family</p>
+        
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="team-member-icon">👑</div>
+                <h3>Princess</h3>
+                <p>Master Nail Technician</p>
+            </div>
+            
+            <div class="team-member">
+                <div class="team-member-icon">✨</div>
+                <h3>Getty</h3>
+                <p>Nail Artist Specialist</p>
+            </div>
+            
+            <div class="team-member">
+                <div class="team-member-icon">💫</div>
+                <h3>Caly</h3>
+                <p>Nail Design Expert</p>
+            </div>
+            
+            <div class="team-member">
+                <div class="team-member-icon">🌟</div>
+                <h3>Nosizo</h3>
+                <p>Senior Technician</p>
+            </div>
+            
+            <div class="team-member">
+                <div class="team-member-icon">💎</div>
+                <h3>Mpume</h3>
+                <p>Pedicure Specialist</p>
+            </div>
+            
+            <div class="team-member">
+                <div class="team-member-icon">🎨</div>
+                <h3>Thando</h3>
+                <p>Client Care Specialist</p>
+            </div>
+            
+            <div class="team-member">
+                <div class="team-member-icon">🌺</div>
+                <h3>Angie</h3>
+                <p>Color Consultant</p>
+            </div>
+            
+            <div class="team-member">
+                <div class="team-member-icon">💖</div>
+                <h3>Ora</h3>
+                <p>Professional Technician</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <h2 class="section-title">What Our Clients Say</h2>
+        <p class="section-subtitle">Real experiences from our valued family of clients</p>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"The experience went beyond my expectations, it was absolutely excellent. If you want your nails done well with exceptional service, Wang Nails is the one for you."</p>
+                <p class="testimonial-author">- Omphile Motale</p>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Thank you Wang nails for the 'Rolls Royce' treatment and making me and my brothers feel at home and relaxed on the day before my wedding."</p>
+                <p class="testimonial-author">- Ashley Van der merwe</p>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"I've been coming to Wang nails for the past 3 years and I have not been disappointed. Today is my husband's birthday and I bought him for a full pedicure and manicure. He left a very satisfied customer."</p>
+                <p class="testimonial-author">- Angena Narsai</p>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Excellent service, very polite and careful people. The massages you get are amazing. And the treatment is out of this world. And the pricing ain't too bad either."</p>
+                <p class="testimonial-author">- Ammarrah Ebrahim</p>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Great customer service, patience and kindness from the staff. Thank you for a great experience. I will definitely be back."</p>
+                <p class="testimonial-author">- Mariece Paulsen</p>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"I'm a first timer here but I must say the service is extremely good. I'm the happiest client ever."</p>
+                <p class="testimonial-author">- Olebogeng Harmse</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2 class="section-title">Visit Us Today</h2>
+        <p class="section-subtitle">Walk-ins welcome | Appointments recommended for groups</p>
+        
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-details">
+                        <strong>Location</strong>
+                        Johannesburg, South Africa<br>
+                        <em>Contact us for exact address</em>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-details">
+                        <strong>Phone</strong>
+                        Call us to book your appointment<br>
+                        <em>Walk-ins also welcome!</em>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">⏰</div>
+                    <div class="contact-details">
+                        <strong>Hours</strong>
+                        Monday - Saturday<br>
+                        <em>Contact for specific hours</em>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-info">
+                <h3>First Time Here?</h3>
+                <p style="color: #666; margin-bottom: 1.5rem; line-height: 1.8;">
+                    Don't worry – we make every first-timer feel right at home. Our friendly team will guide you through our services, help you choose the perfect treatment, and ensure you leave completely satisfied.
+                </p>
+                <p style="color: #666; margin-bottom: 1.5rem; line-height: 1.8;">
+                    <strong style="color: #d4a574;">Special Occasions?</strong> Ask about our bridal packages, birthday specials, and group bookings. We love being part of your celebrations!
+                </p>
+                <a href="#services" class="cta-button">See Our Services</a>
+            </div>
+        </div>
+
+        <div class="highlight-box" style="margin-top: 3rem;">
+            <h3>Why Wang Nails?</h3>
+            <p>✨ 3+ Years of Excellence | 💝 Family-Like Atmosphere | 👑 Expert Team | 💰 Exceptional Value | ⭐ 5-Star Reviews | 🎯 Personalized Care</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Wang Nails. All rights reserved.</p>
+        <p>Premium Nail Salon & Spa | Johannesburg, South Africa</p>
+        <div class="footer-links">
+            <a href="#services">Services</a>
+            <a href="#team">Our Team</a>
+            <a href="#testimonials">Reviews</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <p style="margin-top: 1rem; font-size: 0.9rem; color: #999;">
+            Creating beautiful nails and lasting relationships since 2021
+        </p>
+    </footer>
+</body>
+</html>
